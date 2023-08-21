@@ -6,7 +6,7 @@
 //=====[Declaration of public defines]=========================================
 
 #define TO_SECONDS   10
-#define TO_HOURS     36000
+#define TO_HOURS     10
 
 //=====[Declaration of public data types]======================================
 
