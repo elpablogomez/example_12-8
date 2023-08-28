@@ -74,19 +74,19 @@ void irrigationControlUpdate()
             irrigationControlStatus.irrigationState = 
                                             CONTINUOUS_MODE_IRRIGATING;
             }
-            else if( irrigationTimerLocalCopy.waitedTime >= ( buttonsStatusLocalCopy.howOften * TO_HOURS) ) {
-                if( ( buttonsStatusLocalCopy.howLong != 0 ) && 
-                    ( (int) (100*hl69AveragedValueLocalCopy) < buttonsStatusLocalCopy.moisture ) ) {
-                irrigationControlStatus.irrigationState = 
-                                            PROGRAMMED_MODE_IRRIGATING;
-                irrigationControlStatus.irrigatedTimeMustBeReset = true;
-                }
-                else if ( ( buttonsStatusLocalCopy.howLong == 0 ) ||
-                        ( (int) (100*hl69AveragedValueLocalCopy) >= buttonsStatusLocalCopy.moisture ) ) { 
-                irrigationControlStatus.irrigationState = 
-                                            PROGRAMMED_MODE_IRRIGATION_SKIPPED;
-                } 
+        else if( irrigationTimerLocalCopy.waitedTime >= ( buttonsStatusLocalCopy.howOften * TO_HOURS) ) {
+            if( ( buttonsStatusLocalCopy.howLong != 0 ) && 
+                ( (int) (100*hl69AveragedValueLocalCopy) < buttonsStatusLocalCopy.moisture ) ) {
+            irrigationControlStatus.irrigationState = 
+                                        PROGRAMMED_MODE_IRRIGATING;
+            irrigationControlStatus.irrigatedTimeMustBeReset = true;
             }
+            else if ( ( buttonsStatusLocalCopy.howLong == 0 ) ||
+                    ( (int) (100*hl69AveragedValueLocalCopy) >= buttonsStatusLocalCopy.moisture ) ) { 
+            irrigationControlStatus.irrigationState = 
+                                        PROGRAMMED_MODE_IRRIGATION_SKIPPED;
+            } 
+        }
         
         break;
 

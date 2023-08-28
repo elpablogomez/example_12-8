@@ -9,6 +9,7 @@
 #include "relay.h"
 #include "irrigation_control.h"
 #include "irrigation_timer.h"
+#include "pc_serial_com.h"
 
 //=====[Declaration of private defines]========================================
 
@@ -49,6 +50,7 @@ void irrigationSystemUpdate()
         irrigationControlUpdate();
         irrigationTimerUpdate();
         userInterfaceUpdate();
+        pcSerialComUpdate();
     }
 }
 
